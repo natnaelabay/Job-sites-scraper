@@ -13,7 +13,7 @@ class RemoteSpider(scrapy.Spider):
         "https://remote.co/remote-jobs/design/page/",
         "https://remote.co/remote-jobs/it/"
     ]
-    api_url = urls[2]
+    api_url = urls[1]
 
     def start_requests(self):
         yield scrapy.Request(

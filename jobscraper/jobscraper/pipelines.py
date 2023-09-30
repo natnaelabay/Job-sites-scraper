@@ -26,7 +26,7 @@ class JobscraperPipeline:
     def process_item(self, item, spider):
         if item["source"] == "Remote.co":
             self.cur.execute(
-                """ insert into jobs_joblisting (job_id,title,company,date,img,source, tags,job_url,job_url,  created_at) values (%s,%s,%s,%s,%s,%s,%s,%s,%s, CURRENT_TIMESTAMP)""",
+                """ insert into jobs_joblisting (job_id,title,company,date,img,source, tags,job_url,location,  created_at) values (%s,%s,%s,%s,%s,%s,%s,%s,%s, CURRENT_TIMESTAMP)""",
                 (
                     item["job_id"],
                     item["title"],
