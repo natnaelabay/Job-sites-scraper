@@ -59,7 +59,7 @@ ROBOTSTXT_OBEY = False
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 EXTENSIONS = {
-    # "scrapeops_scrapy.extension.ScrapeOpsMonitor": 500,
+    "scrapeops_scrapy.extension.ScrapeOpsMonitor": 500,
     #    "scrapy.extensions.telnet.TelnetConsole": None,
 }
 
@@ -96,4 +96,6 @@ TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
 
 
-SCRAPEOPS_API_KEY = # your api key here
+SCRAPEOPS_API_KEY = "54235ec7-98df-4dfd-93d1-01e65e7d2ced"
+
+LOG_ENABLED = False

@@ -5,7 +5,6 @@ import dateparser
 class LinkedinSpider(scrapy.Spider):
     name = "linkedin"
     allowed_domains = ["linkedin.com"]
-    # start_urls = ["https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=software%2Bengineering%2C%2BWeb%2Bdevelopment%2C%2Bfrontend%2C%2Bbackend&location=remote&geoId=&start=75"]
     api_url = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=software%2Bengineering%2C%2BWeb%2Bdevelopment%2C%2Bfrontend%2C%2Bbackend&location=remote&geoId=&start="
 
     def start_requests(self):
@@ -49,7 +48,12 @@ class LinkedinSpider(scrapy.Spider):
             }
         if no_jobs >= 50:
             print("50============== done")
+
         elif no_jobs > 0:
             first_job_on_page = int(first_job_on_page) + 25
             first_url = self.api_url + str(first_job_on_page)
-            yield scrapy.Request(url=first_url, callback=self.parse_job, meta={"first_job_on_page" : first_job_on_page})
+            yield scrapy.Request(
+                url=first_url,
+                callback=self.parse_job,
+                meta={"first_job_on_page": first_job_on_page},
+            )
