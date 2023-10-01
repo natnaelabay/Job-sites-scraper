@@ -16,7 +16,6 @@ Follow these steps to set up and run the Job Scraper project:
 
 ```bash
 git clone https://github.com/natnaelabay/Job-sites-scraper.git
-cd job-scraper
 ```
 
 ### 2. Create a Virtual Environment
@@ -44,10 +43,11 @@ Navigate to the `jobscraper` directory (where _run.py is located) and adjust the
 
 ```bash
 # inside jobscraper
-python3 _run.py
+python _run.py
 ```
 
 ### 7. Set Up the API (Django)
+For the stats to work you need to download [en_core_web_sm](https://spacy.io/models) from spaCy
 ```bash
 # Inside the api directory
 python manage.py migrate && python manage.py runserver
