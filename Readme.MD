@@ -42,7 +42,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 ### 5. Configure Scrapy
-- Optional: You can add your ScrapeOs API KEY in the jobscraper/jobscraper/settings.py file as SCRAPEOPS_API_KEY (To configure [ScrapeOS SDK](https://github.com/ScrapeOps/scrapeops-scrapy-sdk)).
+- Add your [ScrapeOs](https://scrapeops.io/) PROXY API_KEY in the jobscraper/jobscraper/settings.py file as SCRAPEOPS_API_KEY (To configure [ScrapeOS SDK](https://github.com/ScrapeOps/scrapeops-scrapy-sdk)).
 
 - Navigate to the `jobscraper` directory (where _run.py is located) and adjust the Scrapy settings as needed.
 
