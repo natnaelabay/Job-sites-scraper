@@ -39,14 +39,6 @@ def stats(request):
         4 : 0,
         5 : 0,
     }
-    roles_stat = {
-        0 : [],
-        1 : [],
-        2 : [],
-        3 : [],
-        4 : [],
-        5 : [],
-    }
 
     nlp = spacy.load("en_core_web_sm")
     for job in jobs.iterator():
@@ -64,4 +56,16 @@ def stats(request):
         idx = cur.index(_max)
         stat[idx] += 1
 
-    return Response(stat, status=status.HTTP_200_OK)
+    _stat = {
+        0 : "Frontend",
+        1 : "Backend",
+        2 : "Product Manager",
+        3 : "Project Manager",
+        4 : "Full Stack",
+        5 : "Designer",
+    }
+    mapped = {}
+    for key in stat.keys():
+        mapped[_stat[key]] = stat[key]
+
+    return Response(mapped, status=status.HTTP_200_OK)
