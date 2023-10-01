@@ -13,13 +13,17 @@ class RemoteSpider(scrapy.Spider):
         "https://remote.co/remote-jobs/design/page/",
         "https://remote.co/remote-jobs/it/"
     ]
-    api_url = urls[1]
+    api_url = urls[0]
 
     def start_requests(self):
-        yield scrapy.Request(
-            url=self.api_url + str(self.current_page) + "/",
-            callback=self.parse_job,
-        )
+        for url in self.urls:
+            self.api_url = url
+            yield scrapy.Request(
+                url=self.api_url + str(self.current_page) + "/",
+                callback=self.parse_job,
+            )
+            self.current_page = 1
+            self.number_of_pages = 1
 
     def parse_job(self, response):
         if self.number_of_pages == 1:
