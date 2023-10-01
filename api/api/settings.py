@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-^k&s*p%#5+!v@6ft*xiut)+nc59qckua_u%#v38jhew*mn@9=(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["165.232.124.136", "http://165.232.124.136"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -131,3 +131,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10
+}
