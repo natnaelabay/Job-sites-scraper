@@ -21,7 +21,11 @@ git clone https://github.com/natnaelabay/Job-sites-scraper.git
 ### 2. Create a Virtual Environment
 ```bash
 # Create a virtual environment (optional but recommended)
+# windows
 python -m venv venv
+
+# linux
+python3 -m venv venv
 ```
 ### 3. Activate the Virtual Environment
 ```bash
@@ -51,6 +55,13 @@ For the stats to work you need to download [en_core_web_sm](https://spacy.io/mod
 ```bash
 # Inside the api directory
 python manage.py migrate && python manage.py runserver
+# avialable endpoints
+# http://localhost:8000/jobs/ you can add queyr params to filter (title, company)
+# http://localhost:8000/jobs/role-stats/
+# http://localhost:8000/jobs/stack-stats/
+
+# avialable routes
+
 ```
 The Django API will be accessible at http://localhost:8000/.
 
