@@ -7,6 +7,7 @@ Job Scrapy is an open-source project that allows you to scrape job listings from
 - Python 3.x installed on your system.
 - [Scrapy](https://scrapy.org/) installed (for web scraping).
 - [Django](https://www.djangoproject.com/) installed (for the API).
+- [ScrapeOs](https://scrapeops.io/) Proxy API KEY (to avoid throttling)
 
 ## Getting Started
 
@@ -41,7 +42,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 ### 5. Configure Scrapy
-Navigate to the `jobscraper` directory (where _run.py is located) and adjust the Scrapy settings as needed.
+- Optional: You can add your ScrapeOs API KEY in the jobscraper/jobscraper/settings.py file as SCRAPEOPS_API_KEY (To configure [ScrapeOS SDK](https://github.com/ScrapeOps/scrapeops-scrapy-sdk)).
+
+- Navigate to the `jobscraper` directory (where _run.py is located) and adjust the Scrapy settings as needed.
 
 ### 6. Run Scrapy to Start Scraping
 
